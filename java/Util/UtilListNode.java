@@ -1,4 +1,4 @@
-package LeetCode.LeetCodeUtil;
+package Util;
 
 import LeetCode.LeetCodeDefinition.ListNode;
 

@@ -1,8 +1,8 @@
 package LeetCode.LeetCodeSolution;
 
 import LeetCode.LeetCodeDefinition.ListNode;
-import LeetCode.LeetCodeUtil.UtilDisplay;
-import LeetCode.LeetCodeUtil.UtilListNode;
+import Util.UtilDisplay;
+import Util.UtilListNode;
 import org.junit.Test;
 
 public class Solution_002_AddTwoNumbers {

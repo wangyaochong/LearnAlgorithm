@@ -1,6 +1,6 @@
 package LeetCode.LeetCodeSolution;
 
-import LeetCode.LeetCodeUtil.UtilDisplay;
+import Util.UtilDisplay;
 import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
