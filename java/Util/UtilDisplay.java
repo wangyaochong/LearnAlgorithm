@@ -20,7 +20,13 @@ public class UtilDisplay {
             System.out.println(input.get(i));
         }
     }
-    public static void display(ListNode listNode){
+    public static void display(LeetCode.LeetCodeDefinition.ListNode listNode){
+        while(listNode!=null){
+            System.out.println(listNode.val);
+            listNode=listNode.next;
+        }
+    }
+    public static void display(LintCode.LintCodeDefinition.ListNode listNode){
         while(listNode!=null){
             System.out.println(listNode.val);
             listNode=listNode.next;

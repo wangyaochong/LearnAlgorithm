@@ -45,8 +45,8 @@ public class Solution_002_AddTwoNumbers {
     }
     @Test
     public void testAddTwoNumbers(){
-        ListNode listNode = UtilListNode.parseArrayToListNodeList(new int[]{1, 2, 3, 4,5});
-        ListNode listNode2 = UtilListNode.parseArrayToListNodeList(new int[]{5,6, 2, 3});
+        ListNode listNode = UtilListNode.parseArrayToListNodeList_leetCode(new int[]{1, 2, 3, 4,5});
+        ListNode listNode2 = UtilListNode.parseArrayToListNodeList_leetCode(new int[]{5,6, 2, 3});
         ListNode result = addTwoNumbers(listNode, listNode2);
         UtilDisplay.display(result);
     }
