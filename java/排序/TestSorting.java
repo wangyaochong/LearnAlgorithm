@@ -1,4 +1,4 @@
-package sorting;
+package 排序;
 
 import org.junit.Test;
 
