@@ -13,7 +13,7 @@ public class 子树 {
         if (T1 == null){
             return false;
         }
-        return isSubtree(T1.left, T2) || isSubtree(T1.right, T2)||isSame(T1,T2);
+        return isSubtree(T1.left, T2) || isSubtree(T1.right, T2)||isSame(T1,T2);//即使是两个节点相等的情况，如果不是子树，那么也得通过子树找是否是子树。
     }
     public boolean isSame(TreeNode T1,TreeNode T2){
         if(T1==T2&&T2==null){
