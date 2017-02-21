@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution;
+package LintCode.LintCodeSolution.面试需要的基础知识;
 
 /**
  * Created by 【王耀冲】 on 【2017/2/8】 at 【9:30】.

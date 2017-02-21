@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution;
+package LintCode.LintCodeSolution.面试需要的基础知识;
 
 import LintCode.LintCodeDefinition.TreeNode;
 import org.junit.Test;
