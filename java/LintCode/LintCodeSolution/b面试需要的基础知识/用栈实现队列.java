@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution.面试需要的基础知识;
+package LintCode.LintCodeSolution.b面试需要的基础知识;
 
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution.高质量的代码;
+package LintCode.LintCodeSolution.c高质量的代码;
 
 import java.util.ArrayList;
 import java.util.List;

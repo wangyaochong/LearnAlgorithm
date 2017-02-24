@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution.高质量的代码;
+package LintCode.LintCodeSolution.c高质量的代码;
 
 import LintCode.LintCodeDefinition.TreeNode;
 

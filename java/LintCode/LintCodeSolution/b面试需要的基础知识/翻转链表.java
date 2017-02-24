@@ -1,11 +1,10 @@
-package LintCode.LintCodeSolution.面试需要的基础知识;
+package LintCode.LintCodeSolution.b面试需要的基础知识;
 
 import LintCode.LintCodeDefinition.ListNode;
 import Util.UtilDisplay;
 import Util.UtilListNode;
 import org.junit.Test;
 
-import java.util.Arrays;
 import java.util.Stack;
 
 /**

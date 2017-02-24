@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution.高质量的代码;
+package LintCode.LintCodeSolution.c高质量的代码;
 
 /**
  * Created by 【王耀冲】 on 【2017/2/23】 at 【17:06】.

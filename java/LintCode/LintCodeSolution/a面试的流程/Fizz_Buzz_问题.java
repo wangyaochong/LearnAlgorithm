@@ -1,4 +1,4 @@
-package LintCode.LintCodeSolution.面试的流程;
+package LintCode.LintCodeSolution.a面试的流程;
 
 /**
  * Created by 【王耀冲】 on 【2017/2/7】 at 【14:41】.

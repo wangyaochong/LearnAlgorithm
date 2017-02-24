@@ -1,9 +1,7 @@
-package LintCode.LintCodeSolution.面试需要的基础知识;
+package LintCode.LintCodeSolution.b面试需要的基础知识;
 
 import LintCode.LintCodeDefinition.TreeNode;
 import org.junit.Test;
-
-import java.util.ArrayList;
 
 /**
  * Created by 【王耀冲】 on 【2017/2/9】 at 【15:04】.
