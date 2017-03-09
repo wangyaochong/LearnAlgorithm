@@ -3,46 +3,39 @@ package LintCode.LintCodeSolution.g两个面试案例;
 import LintCode.LintCodeDefinition.TreeNode;
 
 import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
 
 public class 最近公共祖先 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
-        if (root == null) {
+        int loc=0;
+        isFind=false;
+        midTravel(root,A,aParent);
+        isFind=false;
+        midTravel(root,B,bParent);
+        while(loc<aParent.size()&&loc<bParent.size()&& aParent.get(loc)==bParent.get(loc)){//一路往下遍历，找到最后一个公共祖先
+            loc++;
+        }
+        if(loc==0){
             return null;
         }
-        postTravel(root, A, B);
-        if (visited.indexOf(A)!=-1 && visited.indexOf(B)!=-1) {
-            if(result==null){
-                result = root;
-            }
-        }
-        return result;
+        return aParent.get(loc-1);
     }
-    ArrayList<TreeNode> visited = new ArrayList<TreeNode>();
-    TreeNode result = null;
-    Map<TreeNode,TreeNode> parent=new HashMap<TreeNode, TreeNode>();
-    public void postTravel(TreeNode root, TreeNode A, TreeNode B) {
-
-        if (root == null) {
+    ArrayList<TreeNode> aParent=new ArrayList<TreeNode>();//记录a的祖先
+    ArrayList<TreeNode> bParent=new ArrayList<TreeNode>();//记录b的祖先
+    boolean isFind =false;
+    public void midTravel(TreeNode root,TreeNode a, ArrayList<TreeNode> parent){
+        if(root==null){
             return;
         }
-        postTravel(root.left, A, B);
-        postTravel(root.right, A, B);
-        if (visited.indexOf(A)!=-1 && visited.indexOf(B)!=-1) {
-            if(result==null){
-                result = root;
-            }
+        if(isFind ==false){
+            parent.add(root);
         }
-        visited.add(root);
-    }
-
-    public boolean isVisited(TreeNode n) {
-        for (int i = 0; i < visited.size(); i++) {
-            if (visited.get(i).val == n.val) {
-                return true;
-            }
+        if(root==a){
+            isFind =true;
         }
-        return false;
+        midTravel(root.left,a,parent);
+        midTravel(root.right,a,parent);
+        if(parent!=null&& isFind ==false){
+            parent.remove(parent.size()-1);
+        }
     }
 }
