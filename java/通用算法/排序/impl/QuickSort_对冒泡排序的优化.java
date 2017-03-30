@@ -31,8 +31,36 @@ public class QuickSort_对冒泡排序的优化 implements ISort,ITestSort {
             flag=i;
         }
     }
+
+    private static void rec_quickSort(int[] a, int start, int end) {
+        int index = 0;
+        if(start < end) {
+            index = partition2(a,start,end);
+            rec_quickSort(a,start,index-1);
+            rec_quickSort(a,index+1,end);
+        }
+    }
+
+    private static int partition2(int[] a, int start, int end) {
+
+        int pivot = a[start];
+        while(start < end) {
+            while(start < end && a[end] >= pivot)
+                end--;
+            a[start] = a[end];
+            while(start < end && a[start] <= pivot)
+                start++;
+            a[end] = a[start];
+        }
+        a[start] = pivot;
+        return start;
+    }
+
+
     @Test
     public void testSort() {
-        sort(input.clone());
+        int[] clone = input.clone();
+        rec_quickSort(clone,0,clone.length-1);
+        UtilDisplay.display(clone);
     }
 }
