@@ -1,4 +1,4 @@
-package 通用算法;
+package 通用算法.查找;
 
 import org.junit.Test;
 
@@ -29,7 +29,8 @@ public class 二分查找 {
     }
     @Test
     public void testBinarySearch(){
-        int [] nums=new int[]{-1,0,1,2};
+        int [] nums=new int[]{-1,0,1,2,5};
         System.out.println(binarySearch(nums,1));
+        System.out.println(binarySearch(nums,0));
     }
 }
