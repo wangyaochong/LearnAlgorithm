@@ -8,28 +8,27 @@ import 通用算法.排序.ITestSort;
 
 public class QuickSort_对冒泡排序的优化 implements ISort,ITestSort {
 
-    public void sort(int[] input) {
-        partition(input,0,input.length-1);
-        UtilDisplay.display(input);
-    }
-    public void partition(int[]input ,int i,int j){
-        int mid=i+(j-i+1)/2;
+
+    public void sort(int[]input ,int i,int j){
         if(i>=j)return;
-        sortCore(input,i,j);
-        partition(input,i+1,mid);
-        partition(input,mid,j-1);
+        int div=sortCore(input,i,j);
+        sort(input,i,div-1);
+        sort(input,div+1,j);
     }
-    public void sortCore(int[] input,int i,int j){
-        int flag=i;
-        i=i+1;
+    public int sortCore(int[] input,int i,int j){
+        int flag=input[i];
         while(i<j){
-            while(i<j&& input[j]>input[flag])j--;
-            UtilArray.swap(input,flag,j);
-            flag=j;
-            while(i<j&&input[i]<input[flag])i++;
-            UtilArray.swap(input,flag,i);
-            flag=i;
+            while(i<j&&input[j]>=flag){
+                j--;
+            }
+            input[i]=input[j];
+            while(i<j&&input[i]<=flag){
+                i++;
+            }
+            input[j]=input[i];
         }
+        input[i]=flag;
+        return i;
     }
 
     private static void rec_quickSort(int[] a, int start, int end) {
@@ -60,7 +59,12 @@ public class QuickSort_对冒泡排序的优化 implements ISort,ITestSort {
     @Test
     public void testSort() {
         int[] clone = input.clone();
-        rec_quickSort(clone,0,clone.length-1);
+        sort(clone,0,clone.length-1);
         UtilDisplay.display(clone);
+    }
+
+    @Override
+    public void sort(int[] input) {
+
     }
 }
