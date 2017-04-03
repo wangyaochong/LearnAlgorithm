@@ -9,7 +9,6 @@ import 通用算法.排序.tool.Counter;
 
 public class BubbleSort  implements ISort,ITestSort {
     public void sort(int[] input) {
-
         for(int i=0;i<input.length;i++){
             boolean needSort=true;
             for(int j=i;needSort&&j>=1;j--){

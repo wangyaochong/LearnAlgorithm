@@ -14,6 +14,28 @@ import org.junit.Test;
  你可以假设数组中不存在重复的元素。
  */
 public class 寻找旋转排序数组中的最小值 {
+    public int findMinFaster(int[] nums){//34512，最小值是1
+        int min=0;
+        int max=nums.length;
+        while(min<max){
+            int mid=min+((max-min)>>1);
+            if(nums[mid]>=  nums[min]){//如果mid的值大于等于min的值，最小值在后面
+                if(mid+1< nums.length&&nums[min]>nums[mid+1]){//如果正好越界，那么边界值就是最小值
+                    return nums[mid+1];
+                }
+                min=mid+1;
+            }
+            else if(nums[mid]<nums[min]){
+                //如果mid的值小于min的值，最小值在前面，
+                // 但是这个位置是max等于mid，因为mid有可能就是最小值，所以max等于mid；
+                max=mid;
+            }
+        }
+        if(min>=nums.length){
+            min=0;
+        }
+        return nums[min];
+    }
     public int findMin(int[] nums) {
         // write your code here
         int min=0;
@@ -42,6 +64,7 @@ public class 寻找旋转排序数组中的最小值 {
     public void testFindMin(){
 //        int i=(4-3+1)>>1;
 //        System.out.println(i);
-        System.out.println(findMin(new int[]{6,1,2,3,4,5}));
+        System.out.println(findMin(new int[]{4,5,6,7,0,1,2}));
+        System.out.println(findMinFaster(new int[]{4,5,6,7,0,1,2}));
     }
 }

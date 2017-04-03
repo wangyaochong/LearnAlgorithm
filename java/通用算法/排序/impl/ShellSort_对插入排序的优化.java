@@ -7,6 +7,8 @@ import 通用算法.排序.ITestSort;
 import 通用算法.排序.tool.Counter;
 
 public class ShellSort_对插入排序的优化 implements ISort,ITestSort {
+
+
     public void sort(int[] input) {
         int k=input.length/2;
         while(k>0){//希尔排序的内层就是一个步长为k的插入排序

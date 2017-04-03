@@ -66,15 +66,65 @@ public class Practice {
         input[i]=flag;
         return i;
     }
+    public void mergeSort(int[]input,int start,int end,int []cache){
+        if(start<end){
+            int mid=start+((end-start)>>1);
+            mergeSort(input,start,mid,cache);
+            mergeSort(input,mid+1,end,cache);
+            mergeSortCore(input,start,mid,end,cache);
+        }
+    }
+    public void mergeSortCore(int []input ,int leftStart,int leftEnd,int rightEnd,int [] cache){
+        int initStart=leftStart;
+        int initEnd=rightEnd;
+        int rightStart=leftEnd+1;
+        int cacheLoc=leftStart;
+        while(cacheLoc<=rightEnd){
+            if(rightStart>rightEnd||(leftStart<=leftEnd&&input[leftStart]<input[rightStart])){
+                cache[cacheLoc]=input[leftStart];
+                leftStart++;
+            }else{
+                cache[cacheLoc]=input[rightStart];
+                rightStart++;
+            }
+            cacheLoc++;
+        }
+        for(int i=initStart;i<=initEnd;i++){
+            input[i]=cache[i];
+        }
+
+    }
+
     @Test
-    public void testBubbleSort(){
+    public void testSort(){
         int [] arr=new int[]{1,33,3223,5,22,3,33,22,56,398};
 //        bubbleSort(arr);
 //        insertSort(arr);//需要记住插入排序和希尔排序都是flag的值和插入位置比较
 //        shellSort(arr);
 //        quickSort(arr,0,arr.length-1);
+        mergeSort(arr,0,arr.length-1,arr.clone());
         UtilDisplay.display(arr);
+    }
+    @Test
+    public void testBinSearch(){
+        int[] input=new int[]{1,2,3,8,9,23};
+        int l=0;
+        int h=input.length-1;
 
-
+        int target=8;
+        while(l<=h){
+            int mid=l+((h-l)/2);
+            if(input[mid]==target){
+                System.out.println(mid);
+                break;
+            }
+            if(input[mid]<target){
+                l=mid+1;
+            }
+            if(input[mid]>target){
+                h=mid-1;
+            }
+        }
+        System.out.println("没找到");
     }
 }
