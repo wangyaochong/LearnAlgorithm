@@ -15,7 +15,6 @@ import java.util.ArrayList;
 public class HeapSort implements ISort,ITestSort{
 
     @Test
-    @Override
     public void testSort() {
         int[] input=new int[]{22,3,2,6,7,23,35,69};
         sort(input);
@@ -24,7 +23,6 @@ public class HeapSort implements ISort,ITestSort{
 
     }
 
-    @Override
     public void sort(int[] input) {
         ArrayList<Integer> arrayList=new ArrayList<>();
         for(int i=0;i<input.length;i++){

@@ -11,13 +11,11 @@ import 通用算法.排序.ITestSort;
  */
 public class SelectSort implements ISort,ITestSort{
 
-    @Override
     @Test
     public void testSort() {
         sort(input.clone());
     }
 
-    @Override
     public void sort(int[] input) {
         UtilDisplay.display(input);
         System.out.println("开始");
