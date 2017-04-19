@@ -11,7 +11,6 @@ import 通用算法.排序.ITestSort;
  */
 public class MergeSort implements ISort,ITestSort {
     @Test
-    @Override
     public void testSort() {
         int[] clone = input.clone();
         int[] result=new int[clone.length];
@@ -19,7 +18,6 @@ public class MergeSort implements ISort,ITestSort {
         UtilDisplay.display(result);
     }
 
-    @Override
     public void sort(int[] input) {
 
     }
