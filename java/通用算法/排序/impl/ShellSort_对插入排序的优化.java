@@ -29,6 +29,6 @@ public class ShellSort_对插入排序的优化 implements ISort,ITestSort {
     }
     @Test
     public void testSort() {
-        sort(input.clone());
+        sort(new int[]{1,2,3,83,29,223,11,112,33});
     }
 }

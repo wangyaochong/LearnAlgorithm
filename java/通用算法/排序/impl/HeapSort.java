@@ -46,11 +46,14 @@ public class HeapSort implements ISort,ITestSort{
         }
         Heap.initMaxHeap(arrayList);//先初始化为最小堆
         int count=arrayList.size()-1;
+        int orderCount=0;
         while(count>1){
             UtilArray.swap(arrayList,0,count);
             Heap.sinkMin(arrayList,0,count-1);
             count--;
+            orderCount++;
         }
         UtilDisplay.display(arrayList);
+        System.out.println("有序个数"+orderCount);
     }
 }
