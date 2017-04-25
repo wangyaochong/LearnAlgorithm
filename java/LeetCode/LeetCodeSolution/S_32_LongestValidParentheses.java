@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-public class S_032_LongestValidParentheses {
+public class S_32_LongestValidParentheses {
     public int longestValidParentheses(String input){//()(())输出6
         int max=0;
         int current=0;

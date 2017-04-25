@@ -4,7 +4,7 @@ import Util.UtilDisplay;
 import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
-public class Solution_0001_TwoSum {
+public class S_1_TwoSum {
     //#1
     public int[] twoSum(int[] nums, int target) {
         Map<Integer,Integer> tmp=new HashMap<Integer, Integer>();
