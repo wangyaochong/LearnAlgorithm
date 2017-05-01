@@ -19,6 +19,7 @@ public class UtilDisplay {
         for(int i=0;i<input.size();i++){
             System.out.print(input.get(i)+" ");
         }
+        System.out.println();
     }
     public static void display(LeetCode.LeetCodeDefinition.ListNode listNode){
         while(listNode!=null){
