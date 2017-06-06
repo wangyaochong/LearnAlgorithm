@@ -9,38 +9,16 @@ import java.util.List;
 /**
  * Created by【王耀冲】on 【2017/5/1】 at 【9:03】.
  */
-public class S_46_Permutations {
+public class S_46_Permutations_InverCount {
     @Test
     public void test(){
-        List<List<Integer>> permute = permute(new int[]{1, 2, 3,4,5,6});
-
-        S_46_Permutations_final.checkInvert(permute);
-
-        int target=15;
-        int okCount=0;
+        List<List<Integer>> permute = permute(new int[]{1, 2, 3,4});
         for (List<Integer> integers : permute) {
-            int invertCount=0;
-            for(int i=0;i<integers.size();i++){
-                for(int j=0;j<i;j++){
-                    if(integers.get(i)<integers.get(j)){
-                        invertCount++;
-                        System.out.println(integers.get(i)+"小于"+integers.get(j));
-                    }
-                }
+            for (Integer integer : integers) {
+                System.out.print(integer+" ");
             }
-            if(invertCount==target){
-                okCount++;
-            }
+            System.out.println();
         }
-        System.out.println("ok:"+okCount);
-
-
-//        for (List<Integer> integers : permute) {
-//            for (Integer integer : integers) {
-//                System.out.print(integer+" ");
-//            }
-//            System.out.println();
-//        }
     }
     @Test
     public void testClone(){
@@ -51,12 +29,12 @@ public class S_46_Permutations {
         UtilDisplay.display(clone);
     }
     public List<List<Integer>> permute(int[] nums) {
-        getResult(nums,new ArrayList<>());
+        getResult(nums,new ArrayList<>(),Integer.MAX_VALUE,0,1);
         return result;
     }
-    public void getResult(int[] nums,ArrayList<Integer> path){
+    public void getResult(int[] nums,ArrayList<Integer> path,int min,int invertCount,int targetInvertCount){
         int len=nums.length;
-        if(path.size()==len){
+        if(path.size()==len&&invertCount==targetInvertCount){
             result.add((List<Integer>) path.clone());
         }
         Integer num;
@@ -65,7 +43,11 @@ public class S_46_Permutations {
             visitedLoc[i]=1;
             num=nums[i];
             path.add(num);
-            getResult(nums,path);
+            if(min>num&&invertCount+1<=targetInvertCount){
+                getResult(nums,path,num,invertCount+1,targetInvertCount);
+            }else{
+                getResult(nums,path,min,invertCount,targetInvertCount);
+            }
             visitedLoc[i]=0;
             path.remove(num);
         }
